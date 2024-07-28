@@ -18,7 +18,7 @@ app.get('/home', async (req, res) => {
 })
 
 app.get('/test',(req,res)=>{
-    res.send("helllo world")
+    res.send("helllo vercel")
 })
 
 app.get("/",(req,res)=>{
