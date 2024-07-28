@@ -6,9 +6,15 @@ const app = express()
 
 
 app.get('/home', async (req, res) => {
-    const resp = await fetch('https://dummyjson.com/todos');
+    try{
+        const resp = await fetch('https://dummyjson.com/todos');
     const data = await resp.json();
     res.send(data)
+    }
+    catch (err){
+        res.status(500).send({err:"An error occured while fetching data"})
+    }
+    
 })
 
 app.get('/test',(req,res)=>{
