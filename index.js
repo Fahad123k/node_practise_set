@@ -15,6 +15,10 @@ app.get('/test',(req,res)=>{
     res.send("helllo world")
 })
 
+app.get("/",(req,res)=>{
+    res.send("hello world")
+})
+
 app.listen(8000, () => {
     console.log("App is running on port no 8000");
     db().catch(console.error);
