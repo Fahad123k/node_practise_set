@@ -5,7 +5,7 @@ const app = express()
 
 
 
-app.get('/', async (req, res) => {
+app.get('/home', async (req, res) => {
     const resp = await fetch('https://dummyjson.com/todos');
     const data = await resp.json();
     res.send(data)
