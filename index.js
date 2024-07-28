@@ -1,24 +1,25 @@
-const db= require('./config/db');
+const db = require('./config/db');
 
-const express= require('express');
-const app=express()
+const express = require('express');
+const app = express()
 
-async function  getPost()
-{
-    const resp=  await fetch('https://dummyjson.com/todos');
-    const data=  await resp.json();
+// async function getPost() {
+//     const resp = await fetch('https://dummyjson.com/todos');
+//     const data = await resp.json();
 
-    console.log(data);
-}
+//     console.log(data);
+// }
 
 
-getPost()
+// // getPost()
 
-app.get('/',(req,res)=>{
-res.send("hello")
+app.get('/', async (req, res) => {
+    const resp = await fetch('https://dummyjson.com/todos');
+    const data = await resp.json();
+    res.send(data)
 })
 
-app.listen(8000,()=>{
+app.listen(8000, () => {
     console.log("App is running on port no 8000");
     db().catch(console.error);
 })
