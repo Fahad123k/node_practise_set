@@ -24,8 +24,10 @@ app.get('/test',(req,res)=>{
 app.get("/",(req,res)=>{
     res.send("hello world")
 })
+app.get("/user",(req,res)=>{
+    res.send({"user":"Hi users"})
+})
 
-app.get('/user',(res,req)=>res.send({"user":"Hi users"}))
 
 app.listen(8000, () => {
     console.log("App is running on port no 8000");
