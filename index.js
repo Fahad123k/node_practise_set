@@ -13,6 +13,8 @@ app.get('/home', async (req, res) => {
     }
     catch (err){
         res.status(500).send({err:"An error occured while fetching data"})
+        console.log("hello");
+        
     }
     
 })
